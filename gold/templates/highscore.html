@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highscore</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Highscore</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Attempts</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in highscore %}
+                    <tr>
+                        <td>{{ entry.name }}</td>
+                        <td>{{ entry.gold }}</td>
+                        <td>{{ entry.attempts }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Play Again</a>
+    </div>
+</body>
+</html>
